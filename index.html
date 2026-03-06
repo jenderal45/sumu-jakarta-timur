@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 
 <meta charset="UTF-8">
@@ -8,10 +7,223 @@
 
 <title>SUMU Jakarta Timur</title>
 
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/responsive.css">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:Poppins;
+margin:0;
+background:#f4f6fb;
+color:#1e293b;
+}
+
+.container{
+width:90%;
+margin:auto;
+}
+
+header{
+background:#0f172a;
+color:white;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+height:40px;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+.hero{
+height:85vh;
+background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:52px;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:600px;
+margin:auto;
+}
+
+.btn{
+background:#facc15;
+padding:12px 25px;
+display:inline-block;
+margin-top:25px;
+text-decoration:none;
+font-weight:600;
+color:black;
+border-radius:5px;
+}
+
+.stats{
+padding:70px 0;
+}
+
+.grid-4{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:35px;
+text-align:center;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+}
+
+.title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.about{
+padding:70px 0;
+text-align:center;
+}
+
+.about-text{
+max-width:800px;
+margin:auto;
+line-height:1.7;
+}
+
+.news{
+padding:70px 0;
+}
+
+.news-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.news-card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+}
+
+.news-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.news-body{
+padding:20px;
+}
+
+.contact{
+background:#eef2ff;
+padding:70px 0;
+text-align:center;
+}
+
+footer{
+background:#0f172a;
+color:white;
+padding:50px 0;
+margin-top:80px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:40px;
+}
+
+footer ul{
+list-style:none;
+padding:0;
+}
+
+footer li{
+margin-bottom:8px;
+}
+
+.copyright{
+text-align:center;
+margin-top:30px;
+font-size:14px;
+}
+
+@media(max-width:768px){
+
+nav ul{
+display:none;
+flex-direction:column;
+background:#0f172a;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+padding:20px;
+}
+
+nav ul.show{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+}
+
+</style>
 
 </head>
 
@@ -23,7 +235,7 @@
 
 <div class="logo">
 
-<img src="img/logo.png">
+<img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">
 
 <h2>SUMU Jakarta Timur</h2>
 
@@ -62,8 +274,8 @@
 <h1>Serikat Umat Muslim Jakarta Timur</h1>
 
 <p>
-Organisasi sosial yang bergerak dalam penguatan ukhuwah,
-dakwah, pendidikan, dan pemberdayaan masyarakat Jakarta Timur.
+Membangun ukhuwah, memperkuat solidaritas umat,
+serta mendorong kontribusi nyata bagi masyarakat Jakarta Timur.
 </p>
 
 <a class="btn">Gabung Sekarang</a>
@@ -77,35 +289,23 @@ dakwah, pendidikan, dan pemberdayaan masyarakat Jakarta Timur.
 <div class="container grid-4">
 
 <div class="card">
-
 <h2>10</h2>
-
 <p>Kecamatan</p>
-
 </div>
 
 <div class="card">
-
 <h2>1500+</h2>
-
 <p>Anggota</p>
-
 </div>
 
 <div class="card">
-
 <h2>120+</h2>
-
-<p>Kegiatan Sosial</p>
-
+<p>Kegiatan</p>
 </div>
 
 <div class="card">
-
 <h2>25</h2>
-
-<p>Program Dakwah</p>
-
+<p>Program Sosial</p>
 </div>
 
 </div>
@@ -121,9 +321,8 @@ dakwah, pendidikan, dan pemberdayaan masyarakat Jakarta Timur.
 <p class="about-text">
 
 SUMU Jakarta Timur merupakan organisasi masyarakat yang
-bertujuan memperkuat solidaritas umat serta
-mendorong kontribusi nyata bagi pembangunan sosial,
-pendidikan, dan kesejahteraan masyarakat di wilayah Jakarta Timur.
+bertujuan memperkuat solidaritas umat serta mendorong
+kegiatan sosial, pendidikan, dakwah, dan pemberdayaan masyarakat.
 
 </p>
 
@@ -141,17 +340,14 @@ pendidikan, dan kesejahteraan masyarakat di wilayah Jakarta Timur.
 
 <div class="news-card">
 
-<img src="img/berita1.jpg">
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac">
 
 <div class="news-body">
 
-<h3>Santunan Anak Yatim</h3>
+<h3>Kegiatan Santunan Anak Yatim</h3>
 
 <p>
-
-Kegiatan sosial SUMU Jakarta Timur bersama masyarakat
-dalam rangka memperkuat solidaritas umat.
-
+SUMU Jakarta Timur mengadakan kegiatan sosial bersama masyarakat.
 </p>
 
 <a href="#">Baca Selengkapnya</a>
@@ -162,17 +358,14 @@ dalam rangka memperkuat solidaritas umat.
 
 <div class="news-card">
 
-<img src="img/berita1.jpg">
+<img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d">
 
 <div class="news-body">
 
 <h3>Kajian Keislaman</h3>
 
 <p>
-
-Kajian rutin bulanan yang dihadiri oleh
-tokoh masyarakat dan ulama Jakarta Timur.
-
+Kajian rutin bulanan yang dihadiri tokoh masyarakat dan ulama.
 </p>
 
 <a href="#">Baca Selengkapnya</a>
@@ -195,7 +388,7 @@ tokoh masyarakat dan ulama Jakarta Timur.
 
 <p>Email: info@sumujaktim.or.id</p>
 
-<p>Alamat: Jakarta Timur, DKI Jakarta</p>
+<p>Jakarta Timur, DKI Jakarta</p>
 
 <a class="btn" href="https://wa.me/6280000000000">Hubungi WhatsApp</a>
 
@@ -212,10 +405,8 @@ tokoh masyarakat dan ulama Jakarta Timur.
 <h3>SUMU Jakarta Timur</h3>
 
 <p>
-
-Organisasi sosial keumatan yang bergerak dalam dakwah,
-pendidikan, serta kegiatan sosial kemasyarakatan.
-
+Organisasi sosial yang bergerak dalam dakwah,
+pendidikan, dan kegiatan kemasyarakatan.
 </p>
 
 </div>
@@ -247,14 +438,19 @@ pendidikan, serta kegiatan sosial kemasyarakatan.
 </div>
 
 <p class="copyright">
-
 © 2026 SUMU Jakarta Timur
-
 </p>
 
 </footer>
 
-<script src="js/script.js"></script>
+<script>
+
+function toggleMenu(){
+let menu=document.getElementById("menu");
+menu.classList.toggle("show");
+}
+
+</script>
 
 </body>
 </html>
