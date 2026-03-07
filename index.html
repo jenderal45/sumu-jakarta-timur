@@ -1,455 +1,1214 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SUMU Jakarta Timur</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<title>SUMU Jakarta Timur - Serikat Usaha Muhammadiyah</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-
-body{
-font-family:Poppins;
-margin:0;
-background:#f4f6fb;
-color:#1e293b;
+:root {
+    --primary: #0f766e;
+    --secondary: #f97316;
+    --accent: #10b981;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --gradient-1: #0d9488;
+    --gradient-2: #059669;
 }
 
-.container{
-width:90%;
-margin:auto;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header{
-background:#0f172a;
-color:white;
-position:sticky;
-top:0;
-z-index:100;
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #1e293b;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 0;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
 }
 
-.logo img{
-height:40px;
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
 }
 
-nav ul{
-display:flex;
-gap:25px;
-list-style:none;
-margin:0;
-padding:0;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-font-weight:500;
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
 }
 
-.menu-toggle{
-display:none;
-font-size:28px;
-cursor:pointer;
+.logo-text h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.2;
 }
 
-.hero{
-height:85vh;
-background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc') center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-padding:20px;
+.logo-text span {
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
-.hero h1{
-font-size:52px;
-margin-bottom:20px;
+nav ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    align-items: center;
 }
 
-.hero p{
-max-width:600px;
-margin:auto;
+nav a {
+    color: #475569;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.btn{
-background:#facc15;
-padding:12px 25px;
-display:inline-block;
-margin-top:25px;
-text-decoration:none;
-font-weight:600;
-color:black;
-border-radius:5px;
+nav a:hover {
+    color: var(--primary);
 }
 
-.stats{
-padding:70px 0;
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
 }
 
-.grid-4{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:25px;
+nav a:hover::after {
+    width: 100%;
 }
 
-.card{
-background:white;
-padding:35px;
-text-align:center;
-border-radius:10px;
-box-shadow:0 10px 20px rgba(0,0,0,0.05);
+.btn-primary {
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+    border: none;
+    cursor: pointer;
+    display: inline-block;
 }
 
-.title{
-text-align:center;
-margin-bottom:40px;
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
 }
 
-.about{
-padding:70px 0;
-text-align:center;
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border: 2px solid var(--primary);
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.about-text{
-max-width:800px;
-margin:auto;
-line-height:1.7;
+.btn-secondary:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
 }
 
-.news{
-padding:70px 0;
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--dark);
 }
 
-.news-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 50%, #99f6e4 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
 }
 
-.news-card{
-background:white;
-border-radius:10px;
-overflow:hidden;
-box-shadow:0 10px 20px rgba(0,0,0,0.05);
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(13, 148, 136, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
 }
 
-.news-card img{
-width:100%;
-height:180px;
-object-fit:cover;
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
 }
 
-.news-body{
-padding:20px;
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
-.contact{
-background:#eef2ff;
-padding:70px 0;
-text-align:center;
+.hero-text h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 20px;
 }
 
-footer{
-background:#0f172a;
-color:white;
-padding:50px 0;
-margin-top:80px;
+.hero-text h1 span {
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:40px;
+.hero-text p {
+    font-size: 18px;
+    color: #64748b;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    max-width: 500px;
 }
 
-footer ul{
-list-style:none;
-padding:0;
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-footer li{
-margin-bottom:8px;
+.hero-image {
+    position: relative;
 }
 
-.copyright{
-text-align:center;
-margin-top:30px;
-font-size:14px;
+.hero-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
 }
 
-@media(max-width:768px){
-
-nav ul{
-display:none;
-flex-direction:column;
-background:#0f172a;
-position:absolute;
-top:70px;
-left:0;
-width:100%;
-padding:20px;
+.floating-card {
+    position: absolute;
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-nav ul.show{
-display:flex;
+.floating-card.card-1 {
+    top: 20px;
+    left: -30px;
+    animation: float 3s ease-in-out infinite;
 }
 
-.menu-toggle{
-display:block;
+.floating-card.card-2 {
+    bottom: 30px;
+    right: -20px;
+    animation: float 3s ease-in-out infinite 0.5s;
 }
 
-.hero h1{
-font-size:34px;
+.floating-card i {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
 }
 
+.floating-card h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 0;
 }
 
+.floating-card p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Stats Section */
+.stats {
+    padding: 80px 0;
+    background: white;
+    position: relative;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: -100px;
+    position: relative;
+    z-index: 10;
+}
+
+.stat-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(5, 150, 105, 0.1));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--primary);
+    font-size: 24px;
+}
+
+.stat-card h3 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.stat-card p {
+    color: #64748b;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Vision Section */
+.vision {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, #ffffff, #f8fafc);
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.section-header h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.vision-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.vision-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.vision-card:hover::before {
+    transform: scaleX(1);
+}
+
+.vision-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.vision-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(5, 150, 105, 0.1));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    color: var(--primary);
+    font-size: 28px;
+}
+
+.vision-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.vision-card p {
+    color: #64748b;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* Programs Section */
+.programs {
+    padding: 100px 0;
+    background: white;
+}
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.program-card {
+    display: flex;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.program-icon {
+    width: 120px;
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 40px;
+}
+
+.program-content {
+    padding: 35px;
+    flex: 1;
+}
+
+.program-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.program-content p {
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.program-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.3s ease;
+}
+
+.program-link:hover {
+    gap: 12px;
+}
+
+/* Values Section */
+.values {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.values::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.3;
+}
+
+.values-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.values-text h2 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.values-text p {
+    font-size: 17px;
+    opacity: 0.9;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.values-list {
+    list-style: none;
+}
+
+.values-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.values-list i {
+    width: 30px;
+    height: 30px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.values-image {
+    position: relative;
+}
+
+.values-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 100px 0;
+    background: #f8fafc;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 80px;
+    color: var(--primary);
+    opacity: 0.1;
+    font-family: serif;
+    line-height: 1;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.testimonial-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(13, 148, 136, 0.2);
+}
+
+.testimonial-info h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+
+.testimonial-info span {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.testimonial-card p {
+    color: #475569;
+    line-height: 1.7;
+    font-size: 15px;
+    font-style: italic;
+}
+
+/* CTA Section */
+.cta {
+    padding: 100px 0;
+    background: white;
+    text-align: center;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, #f0fdfa, #ccfbf1);
+    border-radius: 30px;
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(13, 148, 136, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cta h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 18px;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 80px 0 30px;
+    position: relative;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-brand h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-brand p {
+    color: #94a3b8;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    margin-bottom: 12px;
+}
+
+.footer-col a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-col a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-text p {
+        margin: 0 auto 30px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .hero-image {
+        order: -1;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .vision-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .values-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 30px;
+        gap: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    nav ul.show {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .hero-text h1 {
+        font-size: 36px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        margin-top: -50px;
+    }
+    
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .program-card {
+        flex-direction: column;
+    }
+    
+    .program-icon {
+        width: 100%;
+        height: 120px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .floating-card {
+        display: none;
+    }
+}
 </style>
-
 </head>
-
 <body>
 
 <header>
-
-<div class="container nav">
-
-<div class="logo">
-
-<img src="https://cdn-icons-png.flaticon.com/512/190/190411.png">
-
-<h2>SUMU Jakarta Timur</h2>
-
-</div>
-
-<nav>
-
-<ul id="menu">
-
-<li><a href="#">Beranda</a></li>
-<li><a href="#">Profil</a></li>
-<li><a href="#">Program</a></li>
-<li><a href="#">Berita</a></li>
-<li><a href="#">Pengurus</a></li>
-<li><a href="#">Galeri</a></li>
-<li><a href="#">Kontak</a></li>
-
-</ul>
-
-</nav>
-
-<div class="menu-toggle" onclick="toggleMenu()">
-
-☰
-
-</div>
-
-</div>
-
+    <div class="container nav">
+        <div class="logo">
+            <div class="logo-icon">S</div>
+            <div class="logo-text">
+                <h2>SUMU Jakarta Timur</h2>
+                <span>Serikat Usaha Muhammadiyah</span>
+            </div>
+        </div>
+        <nav>
+            <ul id="menu">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#visi">Visi</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li><a href="#" class="btn-primary">Gabung Sekarang</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
 </header>
 
-<section class="hero">
-
-<div class="hero-content">
-
-<h1>Serikat Usaha Muhammadiyah Jakarta Timur</h1>
-
-<p>
-Membangun ukhuwah, memperkuat solidaritas umat,
-serta mendorong kontribusi nyata bagi masyarakat Jakarta Timur.
-</p>
-
-<a class="btn">Gabung Sekarang</a>
-
-</div>
-
+<section class="hero" id="beranda">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h1>Majukan Usahamu Bersama <span>SUMU</span></h1>
+            <p>Serikat Usaha Muhammadiyah Jakarta Timur hadir untuk memperkuat jaringan pengusaha Muslim, menciptakan ekosistem bisnis yang berkah, dan mewujudkan kemandirian ekonomi umat sesuai nilai-nilai Islam.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary">Mulai Bergabung</a>
+                <a href="#" class="btn-secondary">Pelajari Lebih Lanjut</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=500&fit=crop" alt="SUMU Jakarta Timur">
+            <div class="floating-card card-1">
+                <i class="fas fa-users"></i>
+                <div>
+                    <h4>1500+</h4>
+                    <p>Anggota Aktif</p>
+                </div>
+            </div>
+            <div class="floating-card card-2">
+                <i class="fas fa-handshake"></i>
+                <div>
+                    <h4>100%</h4>
+                    <p>Berkah & Halal</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section class="stats">
-
-<div class="container grid-4">
-
-<div class="card">
-<h2>10</h2>
-<p>Kecamatan</p>
-</div>
-
-<div class="card">
-<h2>1500+</h2>
-<p>Anggota</p>
-</div>
-
-<div class="card">
-<h2>120+</h2>
-<p>Kegiatan</p>
-</div>
-
-<div class="card">
-<h2>25</h2>
-<p>Program Sosial</p>
-</div>
-
-</div>
-
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h3>10</h3>
+                <p>Kecamatan</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-user-tie"></i></div>
+                <h3>1500+</h3>
+                <p>Anggota Pengusaha</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                <h3>120+</h3>
+                <p>Kegiatan Tahunan</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                <h3>50+</h3>
+                <p>Program Sosial</p>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="about">
-
-<div class="container">
-
-<h2 class="title">Tentang SUMU Jakarta Timur</h2>
-
-<p class="about-text">
-
-SUMU Jakarta Timur merupakan organisasi masyarakat yang
-bertujuan memperkuat solidaritas umat serta mendorong
-kegiatan sosial, pendidikan, dakwah, dan pemberdayaan masyarakat.
-
-</p>
-
-</div>
-
+<section class="vision" id="tentang">
+    <div class="container">
+        <div class="section-header">
+            <h2>Nilai-Nilai Muhammadiyah dalam SUMU</h2>
+            <p>Membangun ekonomi umat berlandaskan Al-Qur'an dan Sunnah dengan semangat amar ma'ruf nahi munkar</p>
+        </div>
+        <div class="vision-grid">
+            <div class="vision-card">
+                <div class="vision-icon"><i class="fas fa-mosque"></i></div>
+                <h3>Aqidah yang Kuat</h3>
+                <p>Menjalankan usaha dengan landasan iman yang kokoh, menjadikan setiap aktivitas bisnis sebagai ibadah kepada Allah SWT.</p>
+            </div>
+            <div class="vision-card">
+                <div class="vision-icon"><i class="fas fa-balance-scale"></i></div>
+                <h3>Etika Bisnis Islami</h3>
+                <p>Menerapkan prinsip kejujuran, amanah, dan keadilan dalam setiap transaksi, menjauhi riba, gharar, dan maysir.</p>
+            </div>
+            <div class="vision-card">
+                <div class="vision-icon"><i class="fas fa-hands-helping"></i></div>
+                <h3>Solidaritas Umat</h3>
+                <p>Membangun ukhuwah Islamiyah antar pengusaha, saling tolong-menolong dan menguatkan jaringan bisnis sesama Muslim.</p>
+            </div>
+            <div class="vision-card">
+                <div class="vision-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Pemberdayaan SDM</h3>
+                <p>Mencetak pengusaha Muslim yang berkualitas, berilmu, dan berakhlak mulia melalui pendidikan dan pelatihan berkelanjutan.</p>
+            </div>
+            <div class="vision-card">
+                <div class="vision-icon"><i class="fas fa-leaf"></i></div>
+                <h3>Tanggung Jawab Sosial</h3>
+                <p>Mengembalikan sebagian keuntungan untuk kesejahteraan masyarakat melalui program-program dakwah dan sosial.</p>
+            </div>
+            <div class="vision-card">
+                <div class="vision-icon"><i class="fas fa-rocket"></i></div>
+                <h3>Inovasi & Kemandirian</h3>
+                <p>Mendorong kreativitas dan inovasi dalam berwirausaha untuk mencapai kemandirian ekonomi bangsa.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="news">
-
-<div class="container">
-
-<h2 class="title">Berita Terbaru</h2>
-
-<div class="news-grid">
-
-<div class="news-card">
-
-<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac">
-
-<div class="news-body">
-
-<h3>Kegiatan Santunan Anak Yatim</h3>
-
-<p>
-SUMU Jakarta Timur mengadakan kegiatan sosial bersama masyarakat.
-</p>
-
-<a href="#">Baca Selengkapnya</a>
-
-</div>
-
-</div>
-
-<div class="news-card">
-
-<img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d">
-
-<div class="news-body">
-
-<h3>Kajian Keislaman</h3>
-
-<p>
-Kajian rutin bulanan yang dihadiri tokoh masyarakat dan ulama.
-</p>
-
-<a href="#">Baca Selengkapnya</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+<section class="programs" id="program">
+    <div class="container">
+        <div class="section-header">
+            <h2>Program Unggulan</h2>
+            <p>Solusi bisnis berdaya untuk masa depan cerah bersama SUMU Jakarta Timur</p>
+        </div>
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="program-icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="program-content">
+                    <h3>SUMU Pro</h3>
+                    <p>Aplikasi dinamis untuk berinteraksi, berbagi wawasan bisnis, serta saling membantu melalui mentoring dan diskusi strategi usaha.</p>
+                    <a href="#" class="program-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-icon"><i class="fas fa-network-wired"></i></div>
+                <div class="program-content">
+                    <h3>SUMU Catalyst</h3>
+                    <p>Platform kolaborasi yang mempertemukan anggota dengan peluang usaha dan jaringan relevan untuk mempercepat pertumbuhan bisnis.</p>
+                    <a href="#" class="program-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="program-content">
+                    <h3>SUMU Venture Builder</h3>
+                    <p>Kurasi bisnis siap berkembang nasional dan internasional, khusus untuk usaha yang telah terbukti product-market fit.</p>
+                    <a href="#" class="program-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="program-card">
+                <div class="program-icon"><i class="fas fa-handshake"></i></div>
+                <div class="program-content">
+                    <h3>SUMU Connect</h3>
+                    <p>Kesempatan bersilaturahmi dengan pengusaha senior dan tokoh bisnis terkemuka yang sulit diakses secara mandiri.</p>
+                    <a href="#" class="program-link">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="contact">
+<section class="values" id="visi">
+    <div class="container values-content">
+        <div class="values-text">
+            <h2>Visi 2045: 30 Anggota SUMU Masuk 100 Orang Terkaya Indonesia</h2>
+            <p>Sebuah target mulia yang akan dicapai melalui sinergi program unggulan, mentoring intensif, dan semangat kebersamaan dalam berwirausaha.</p>
+            <ul class="values-list">
+                <li><i class="fas fa-check"></i> Membangun ekosistem bisnis Islami yang berkelanjutan</li>
+                <li><i class="fas fa-check"></i> Menciptakan pengusaha Muslim yang berdaya saing global</li>
+                <li><i class="fas fa-check"></i> Berkontribusi nyata dalam pembangunan ekonomi nasional</li>
+                <li><i class="fas fa-check"></i> Menjadi teladan dalam amal usaha yang berkah</li>
+            </ul>
+            <a href="#" class="btn-primary" style="margin-top: 20px;">Pelajari Visi Kami</a>
+        </div>
+        <div class="values-image">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=500&fit=crop" alt="Tim SUMU">
+        </div>
+    </div>
+</section>
 
-<div class="container">
+<section class="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <h2>Apa Kata Mereka</h2>
+            <p>Testimoni dari para pengurus dan anggota SUMU Jakarta Timur</p>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop" alt="Pengurus" class="testimonial-img">
+                    <div class="testimonial-info">
+                        <h4>Ahmad Fauzi</h4>
+                        <span>Ketua SUMU Jakarta Timur</span>
+                    </div>
+                </div>
+                <p>"SUMU bukan sekadar wadah bisnis, tapi rumah bagi pengusaha Muslim yang ingin menggapai sukses dunia akhirat. Bersama-sama kita membangun ekonomi umat yang berkah."</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop" alt="Anggota" class="testimonial-img">
+                    <div class="testimonial-info">
+                        <h4>Siti Aminah</h4>
+                        <span>Pengusaha UMKM</span>
+                    </div>
+                </div>
+                <p>"Bergabung dengan SUMU mengubah cara pandang saya tentang bisnis. Dari sekadar mencari untung, kini saya memahami bahwa setiap transaksi adalah ibadah."</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Anggota" class="testimonial-img">
+                    <div class="testimonial-info">
+                        <h4>Budi Santoso</h4>
+                        <span>Founder Startup</span>
+                    </div>
+                </div>
+                <p>"Networking di SUMU luar biasa. Saya mendapat mentor berpengalaman yang membimbing dari sisi bisnis dan spiritual. Benar-benar pengalaman yang berharga."</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-<h2 class="title">Kontak Kami</h2>
-
-<p>Email: info@sumujaktim.or.id</p>
-
-<p>Jakarta Timur, DKI Jakarta</p>
-
-<a class="btn" href="https://wa.me/6280000000000">Hubungi WhatsApp</a>
-
-</div>
-
+<section class="cta" id="kontak">
+    <div class="container">
+        <div class="cta-box">
+            <div class="cta-content">
+                <h2>Siap Membangun Usaha yang Berkah?</h2>
+                <p>Bergabunglah dengan ribuan pengusaha Muslim di Jakarta Timur. Bersama-sama kita wujudkan kemandirian ekonomi umat dan kontribusi nyata bagi masyarakat.</p>
+                <a href="#" class="btn-primary" style="font-size: 16px; padding: 15px 40px;">Gabung SUMU Sekarang</a>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer>
-
-<div class="container footer-grid">
-
-<div>
-
-<h3>SUMU Jakarta Timur</h3>
-
-<p>
-Organisasi sosial yang bergerak dalam dakwah,
-pendidikan, dan kegiatan kemasyarakatan.
-</p>
-
-</div>
-
-<div>
-
-<h3>Menu</h3>
-
-<ul>
-
-<li>Profil</li>
-<li>Program</li>
-<li>Berita</li>
-<li>Galeri</li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h3>Kontak</h3>
-
-<p>Email: info@sumujaktim.or.id</p>
-<p>Jakarta Timur</p>
-
-</div>
-
-</div>
-
-<p class="copyright">
-© 2026 SUMU Jakarta Timur
-</p>
-
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3><i class="fas fa-mosque"></i> SUMU Jakarta Timur</h3>
+                <p>Serikat Usaha Muhammadiyah Jakarta Timur berkomitmen membangun ekonomi umat yang berlandaskan nilai-nilai Islam, berorientasi pada kemandirian, dan berkontribusi pada kesejahteraan bersama.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Program</a></li>
+                    <li><a href="#">Berita</a></li>
+                    <li><a href="#">Galeri</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Program</h4>
+                <ul>
+                    <li><a href="#">SUMU Pro</a></li>
+                    <li><a href="#">SUMU Catalyst</a></li>
+                    <li><a href="#">SUMU Venture</a></li>
+                    <li><a href="#">SUMU Connect</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Jakarta Timur, DKI Jakarta</li>
+                    <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@sumujaktim.or.id</li>
+                    <li><i class="fas fa-phone" style="margin-right: 10px;"></i> +62 812-3456-7890</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SUMU Jakarta Timur. All rights reserved. | Serikat Usaha Muhammadiyah</p>
+        </div>
+    </div>
 </footer>
 
 <script>
-
-function toggleMenu(){
-let menu=document.getElementById("menu");
-menu.classList.toggle("show");
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('show');
 }
 
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.style.boxShadow = '0 2px 30px rgba(0,0,0,0.1)';
+    } else {
+        header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
+    }
+});
 </script>
 
 </body>
